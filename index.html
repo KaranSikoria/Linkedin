@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arvind Abraham</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+            background: linear-gradient(45deg, #e66465, #9198e5, #3e5151, #decba4);
+        background-size: 200% 200%;
+        animation: gradientAnimation 3s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Make it round */
+            margin-right: 20px;
+            overflow: hidden; /* Ensure the image is fully visible */
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Prevent image distortion */
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        a {
+            color: blue;
+            text-decoration: none; /* Optional: Removes underline from links */
+        }
+        a:hover {
+            text-decoration: underline; /* Optional: Underline on hover */
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+    .languages-tools {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        perspective: 1000px;
+    }
+
+    .tool {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: rotate 10s linear infinite;
+        transform-style: preserve-3d;
+    }
+
+    .tool img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .tool:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes rotate {
+        0% { transform: rotateY(0deg); }
+        100% { transform: rotateY(360deg); }
+    }
+
+        mark {
+            background-color: rgba(255, 255, 0, 0.5);
+            color: black;
+            font-weight: bold;
+        }
+        .publication {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #007bff; /* Blue border on the left */
+        }
+
+        .publication a {
+            color: #007bff; /* Blue link color */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        .publication a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+        .publication-date {
+            font-style: italic;
+            color: #6c757d; /* Gray text color */
+        }
+
+        .abstract {
+            margin-top: 5px;
+            color: #495057; /* Dark text color */
+        }
+
+        .languages-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .tool img {
+            width: 50px; /* Set the desired width */
+            height: 50px; /* Set the desired height */
+            object-fit: contain; /* Maintain aspect ratio */
+        }
+
+        /* Optional: Add more styling as needed */
+        .tool {
+            margin-bottom: 10px;
+        }
+
+        .current-projects {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .current-projects li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .current-projects a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .current-projects a:hover {
+            text-decoration: underline;
+        }
+
+        /* Job Box */
+        .job-box {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        /* Job Title */
+        .job-box h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .job-box a {
+            color: #007bff; /* Blue link color */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        /* Company Name */
+        .job-box h4 {
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Job Description */
+        .job-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+
+        .job-box ul li:before {
+            content: "\2022";
+            color: #333;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+
+        .languages-tools {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tool {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: moveChain 4s ease infinite;
+        }
+
+        @keyframes moveChain {
+            0%, 100% { transform: translateY(110); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .tool img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .floating-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: white;
+            padding: 12px 8px;
+            border-radius: 115px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .floating-link:hover {
+            background-color: #45a049;
+        }
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+    .awards-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .awards-container h2 {
+        text-align: center;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 20px;
+    }
+
+    .award {
+        background-color: #f9f9f9;
+        margin: 12px 0;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .award li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color: #444;
+    }
+
+    .award li a {
+        color: #007BFF;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .award li a:hover {
+        text-decoration: underline;
+    }
+
+    .award li b {
+        color: #222;
+    }
+
+    .certification {
+        font-family: 'Open Sans', sans-serif;
+        color: #222;
+        font-size: 16px;
+    }
+
+    </style>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-image">
+        <img src="https://avatars.githubusercontent.com/u/25103343?v=4" alt="Profile Picture">
+    </div>
+    <div>
+
+        <a href="https://chess.com/member/arvindabraham" class="floating-link" target="_blank" rel="noopener noreferrer">Chess Challenges?!</a>
+
+        <h1>Hey! Hey! Hey! <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></h1>
+        <p>I'm <a href="https://www.linkedin.com/in/arvindabraham/"><b>Arvind Abraham</b></a>, a Senior Software Engineer with a passion for coding and optimizing big data processes. With a strong interest in <b>Machine Learning & Data Engineering</b>, I thrive on tackling complex challenges and mastering new skills on the fly.</p>
+        <p>With 6 years of experience at <a href="https://www.kayzen.io" target="_blank" rel="noopener noreferrer"><b>Kayzen</b></a>, a cutting-edge German AdTech startup, and at leading MNCs like <a href="https://www.zscaler.com" target="_blank" rel="noopener noreferrer"><b>Zscaler</b></a> and <a href="https://www.nokia.com" target="_blank" rel="noopener noreferrer"><b>Nokia Alcatel Lucent</b></a>, I've had the privilege of working across diverse domains alongside some of the brightest minds in the industry.</p>
+
+        <p>I see software engineers as real-life superheroes, using code to harness the power of electricity and make the world a better place.</p>
+
+        <p>Always eager to improve and learn, I've recently started contributing to open-source projects, further expanding my horizons.</p>
+
+        <h2>Tech Stacks</h2>
+        <div class="languages-tools">
+            <div class="tool">
+                <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" alt="Python">
+            </div>
+            <div class="tool">
+                <img src="https://toppng.com/uploads/preview/apache-kafka-logo-11563428199khgq3xvb4q.png" alt="Kafka">
+            </div>
+            <div class="tool">
+                <img src="https://iconape.com/wp-content/png_logo_vector/apache-spark-logo.png" alt="Apache Spark">
+            </div>
+            <div class="tool">
+                <img src="https://banner2.cleanpng.com/20190619/oyo/kisspng-apache-airflow-workflow-orchestration-directed-acy-ampquotamsterda-5d0ade8e557994.2185587715609934223501.jpg" alt="Apache Airflow">
+            </div>
+            <div class="tool">
+                <img src="http://www.itshop.ru/productimages/auto/pimg_2019527_552.jpg" alt="Hadoop HDFS">
+            </div>
+            <div class="tool">
+                <img src="https://www.logo.wine/a/logo/Microsoft_Azure/Microsoft_Azure-Logo.wine.svg" alt="Bash">
+            </div>
+            <div class="tool">
+                <img src="https://cdn.cookielaw.org/logos/4a2cde9e-5f84-44b2-bdbb-6a93354d1c72/e1199e19-1935-49fa-a4e2-bf7f9d08cee6/783d7c83-af8c-4032-901b-b3ec48982078/dbt-logo.png" alt="dbt">
+            </div>
+            <div class="tool">
+                <img src="https://cdn.worldvectorlogo.com/logos/clickhouse.svg" alt="ClickHouse">
+            </div>
+            <div class="tool">
+                <img src="https://avatars.githubusercontent.com/u/2452804?s=200&v=4" alt="Mysql">
+            </div>
+            <div class="tool">
+                <img src="https://cdn.dribbble.com/users/261617/screenshots/3146111/media/b05d35956c0ff7e8284a193016248fef.png" alt="VW">
+            </div>
+            <div class="tool">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.png" alt="Nagios">
+            </div>
+            <div class="tool">
+                <img src="https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png" alt="Kubernetes">
+            </div>
+            <div class="tool">
+                <img src="https://avatars.githubusercontent.com/u/5429470?s=200&v=4" alt="Tool 4">
+            </div>
+            <div class="tool">
+                <img src="https://play-lh.googleusercontent.com/ouYRMbe6yFT06JVoIIDJUJEf1L7ftnUdo3K-yEha45Y9zDM57ocrITQZjQBPrCg2tQ=w480-h960-rw" alt="Bash">
+            </div>
+        </div>
+
+        <div class="awards-container">
+            <h2>Certifications, Honours and Achievements</h2>
+            <div class="award">
+                <li><b>Mentored</b> over 200 students at <a href="https://drive.google.com/file/d/1Q4HLWQ6-4wKgeo50DkHYyrSDUuJZhtA8/view?usp=sharing">Christ University</a></li>
+            </div>
+            <div class="award">
+                <li><b><a href="https://skillsoft.digitalbadges.skillsoft.com/947c6b4e-517f-4468-9786-655a516fe0a6">Fundamentals of Microsoft Azure and Secure Programming</a></b></li>
+            </div>
+            <div class="award">
+                <li><b><a href="https://moonshot.scaler.com/s/sl/HW9OhBTWht">Spark for DataScience</a></b></li>
+            </div>
+            <div class="award">
+                <li><b>CyberSecurity Meet</b> in person with <a href="https://www.linkedin.com/in/micha2019/"><b>Micha Weis</b></a> (<b>Head of Finance Cyber Unit - Ministry of Finance, Israel</b>)</li>
+            </div>
+            <div class="award">
+                <li><b>First Prize</b> in <b><a href="https://drive.google.com/file/d/1GGJnGpl7_ezd4mrFXMl-ZOUWGukN32Nu/view?usp=sharing">Debugging (C/C++)</a></b> at <b>Inter-College fest</b> associated with <b>Anna University</b></li>
+            </div>
+            <div class="award">
+                <li><b>First Prize</b> in <b><a href="https://drive.google.com/file/d/1GTuAWy2Pmvht4fQeqz1zbAHjoH4cVwWX/view?usp=sharing">Paper Presentation</a></b> at <b>Inter-College fest</b> associated with <b>Anna University</b></li>
+            </div>
+            <div class="award">
+                <li><b>Won</b> the <b><a href="https://drive.google.com/file/d/1Ii7I_YiySE7BbCdejzoPKjNbEOwI5b3U/view?usp=sharing">district-level versification competition</a></b> among <b>80,000 students</b> at the <b>CBSE Youth Festival</b></li>
+            </div>
+            <div class="award">
+                <li>Bagged <b>Gold & Silver medals</b> from <b>HelpAge India</b> for raising the highest funds since I was 10 years old</li>
+            </div>
+            <div class="award">
+                <li>Received <b><a href="https://drive.google.com/file/d/1foW9D_hG4Qu-rO3xgqqDJ1D4I44hbg6i/view?usp=sharing">commendation</a></b> from <b>Kapil Sibal</b>, Minister of Human Resource Development, for successfully completing the inaugural batch of <b>CCE</b></li>
+            </div>
+            <div class="award">
+                <li>Thrilled to have completed a <b>15,000-foot <a href="https://drive.google.com/file/d/12148MStJSO2cNJD0y85J8JQzp-bhSBB9/view?usp=sharing">skydive</a></b> over <b>Prague</b>, an incredible honor and adventure</li>
+            </div>
+            <div class="award">
+                <li>Completed <b><a href="https://www.linkedin.com/feed/update/urn:li:activity:7001602112946143232/">two scuba dives</a></b> in the <b>Andaman & Nicobar Islands</b></li>
+            </div>
+        </div>
+
+        <br>
+        <h2>Experience</h2>
+        <div class="job-box">
+            <img src="https://asset.brandfetch.io/idVk-klZzr/idRIgEHF1c.jpeg" alt="Zscaler Logo" style="width: 80px; height: 80px; margin-right: 20px; float: left;">
+            <h3><a href="https://www.zscaler.com/" target="_blank">Senior Software Engineer</a></h3>
+            <h4>Zscaler | Banglore | May 2024 - Present</h4>
+            <ul>
+                <br>
+                <li><b><span style="color: #007BFF;">[DataEng]</span></b>
+                    <ul style="list-style-type:none; padding-left: 20px;">
+                        <li>Built a real-time data streaming data flow on <b>Azure</b> using <b>ADX</b> and <b>EventHubs</b> via ARM.</li>
+                    </ul>
+            </ul>
+        </div>
+
+        <div class="job-box">
+            <img src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_2/i8wnstshccnfyetcetbs" alt="Kayzen Logo" style="width: 80px; height: 80px; margin-right: 20px; float: left;">
+            <h3><a href="https://www.kayzen.io" target="_blank"> DevOps Engineer (AI/ML & Data)</a></h3>
+            <h4>Kayzen | Berlin & Bangalore | Aug 2019 - May 2024</h4>
+            <ul>
+                <br>
+                <ul style="list-style-type:none; padding: 0;">
+
+                    <li><b><span style="color: #007BFF;">[ML]</span></b>
+                        <ul style="list-style-type:none; padding-left: 20px;">
+                            <li>Built E2E ML backend for retargeting users, driving in a median monthly revenue of <b>$30k</b>.</li>
+                            <li>Implemented ML solutions for <b>AB Testing, Loss Notification Analysis, Model Deployment & Validation, and Feature Pipelines</b>, while also creating insightful dashboards.</li>
+                        </ul>
+                    </li>
+
+                    <li><b><span style="color: #007BFF;">[DataEng]</span></b>
+                        <ul style="list-style-type:none; padding-left: 20px;">
+                            <li>Optimized performance of large-scale <b>Big Data ETL</b> processes involving <b>Spark, Kafka, ClickHouse, SQL, Hadoop,</b> and <b>Airflow</b>.</li>
+                            <li>Optimized <b>Parquet ETL</b>, reducing <b>data transfer time</b> from <b>ClickHouse to HDFS</b> from over <b>24 hours</b> to <b>40-50 minutes</b> for <b>1.5 TB of data</b>.</li>
+                            <li>Improved <b>JSON data ingestion</b> from <b>Kafka to ClickHouse</b> on-premise, increasing <b>throughput</b> from <b>48,000 to 93,000 messages per second</b>.</li>
+                            <li>Architected <b>DL & DWH</b> using technologies such as <b>Hive, Spark, HDFS, ClickHouse, Iceberg, Delta,</b> and <b>Dremio</b>.</li>
+                            <li>Reduced data ingestion time to <b>MySQL</b> from <b>70 to 3 minutes for 10 hours</b> of batch refresh data.</li>
+                        </ul>
+                    </li>
+                    <li><b><span style="color: #007BFF;">[Dev-Ops]</span></b>
+                        <ul style="list-style-type:none; padding-left: 20px;">
+                            <li>Pioneered the Adoption of <a href="https://kayzen.io/blog/etl-workflows-with-apache-airflow"><b>Apache Airflow</b></a> during its early development phase.</li>
+                            <li>Developed frameworks for database operations, focusing on <b>scalability, sharding, configuration, and migration</b> tasks.</li>
+                            <li>Handled DevOps responsibilities, including debugging, monitoring, and maintaining on-premises servers across three data centers.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+        <div class="job-box">
+            <div class="job">
+                <img src="https://www.nokia.com/sites/default/files/2023-02/nokia-refreshed-logo-3_0.jpg?height=405&width=720" alt="Nokia Logo" style="width: 80px; height: 80px; margin-right: 20px; float: left;">
+                <h3><a href="https://www.nokia.com" target="_blank">R&D BigData Engineer</a></h3>
+                <h4>Nokia, Bengaluru, India | On-Site | Aug 2018 - Aug 2019</h4>
+                <ul>
+                    <br>
+                    <li><b>[R&D]</b> Secure integration of <b>Schema Registry</b> with Kafka.</li>
+                    <li><b>[Security]</b> Development of scripts to generate <b>SSL certificates</b> for internal authentication on <b>K8s clusters</b> with 1k nodes.</li>
+                    <li><b>[BDD - Radish Framework] Performance testing</b> Kafka integration with KSQL, KConnect, Schema Registry.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Publications</h2>
+        <div class="publication">
+            <h3><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3511056" target="_blank">Temporal Resilience of Phishing Detection Models in Machine Learning</a></h3>
+            <h4>Proceedings of the 5th International Conference on Cyber Security & Privacy in Communication Networks (ICCS) 2019 | NIT, Kurukshetra, India</h4>
+            <p class="publication-date">Publication Date: 30 December 2019</p>
+            <p class="abstract">It is known that phishing URLs change intermittently, which causes models to become obsolete after a period of time. In this work we examine the efficiency of a phishing detection model in terms of model drift. That is given a trained phishing detection model, how long will the model maintain the performance.</p>
+        </div>
+
+        <div class="current-projects">
+            <ul>
+                <li>🔭 Working on multiple projects, including data engineering, software development, and monitoring.</li>
+                <li>🌱 Learning to contribute to open source.</li>
+                <li>👯 Looking to collaborate on <a href="https://www.linkedin.com/pulse/how-we-automated-etl-workflows-apache-airflow-receive-arvind-abraham/">Apache Airflow</a>.</li>
+                <li>📫 How to reach me: <a href="mailto:arvindeybram@gmail.com">arvindeybram@gmail.com</a></li>
+                <li>😄 Pronouns: He/Him</li>
+                <li>⚡ Fun fact: Can do a handstand.</li>
+            </ul>
+        </div>
+        <p>Apart from work, I love watching Anime. </p>
+        <h4>My never-give-up attitude is my ninja way.</h4>
+    </div>
+</div>
+</body>
+</html>
